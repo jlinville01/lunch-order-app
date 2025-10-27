@@ -7,9 +7,10 @@ interface MenuCardProps {
   description: string;
   selected: boolean;
   onClick: () => void;
+  className?: string;
 }
 
-export const MenuCard = ({ icon, name, description, selected, onClick }: MenuCardProps) => {
+export const MenuCard = ({ icon, name, description, selected, onClick, className }: MenuCardProps) => {
   return (
     <Card
       onClick={onClick}
@@ -18,7 +19,8 @@ export const MenuCard = ({ icon, name, description, selected, onClick }: MenuCar
         "border-2 hover:shadow-[var(--shadow-card-hover)]",
         selected
           ? "border-primary bg-primary/5 shadow-[var(--shadow-card)]"
-          : "border-border hover:border-primary/50"
+          : "border-border hover:border-primary/50",
+        className
       )}
     >
       <div className="flex flex-col items-center text-center gap-3">

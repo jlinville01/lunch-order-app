@@ -8,6 +8,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const Dessert = () => {
   const { orderData, updateOrderData, setCurrentStep, currentStep } = useOrder();
 
+  const toggleDessert = (id: string) => {
+    updateOrderData({ 
+      dessert: orderData.dessert === id ? null : id 
+    });
+  };
+
   return (
     <div className="min-h-screen p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
@@ -24,7 +30,8 @@ const Dessert = () => {
               key={item.id}
               {...item}
               selected={orderData.dessert === item.id}
-              onClick={() => updateOrderData({ dessert: item.id })}
+              onClick={() => toggleDessert(item.id)}
+              className="dessert-option-card"
             />
           ))}
         </div>

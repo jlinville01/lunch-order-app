@@ -34,6 +34,7 @@ const MainCourse = () => {
               {...item}
               selected={orderData.mainCourse === item.id}
               onClick={() => updateOrderData({ mainCourse: item.id })}
+              className="main-course-option-card"
             />
           ))}
         </div>

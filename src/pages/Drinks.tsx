@@ -44,6 +44,7 @@ const Drinks = () => {
               {...item}
               selected={orderData.drinks.includes(item.id)}
               onClick={() => toggleDrink(item.id)}
+              className="drink-option-card"
             />
           ))}
         </div>

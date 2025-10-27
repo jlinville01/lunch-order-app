@@ -44,6 +44,7 @@ const Sides = () => {
               {...item}
               selected={orderData.sides.includes(item.id)}
               onClick={() => toggleSide(item.id)}
+              className="side-option-card"
             />
           ))}
         </div>
